@@ -1,0 +1,31 @@
+<h1>予約済みルーム一覧</h1>
+
+ <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ルーム画像</th>
+          <th>ルーム名</th>
+          <th>ルーム紹介</th>
+          <th>開始日</th>
+          <th>終了日</th>
+          <th>人数</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @reservations.each do |reservation| %>
+          <tr>
+            <td><%= reservation.id %></td>
+            <td><%= reservation.img %></td>
+            <td><%= reservation.name %></td>
+            <td><%= reservation.introduction %></td>
+            <td><%= reservation.strat %></td>
+            <td><%= reservation.end %></td>
+            <td><%= reservation.number %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+<p><%= link_to "ルーム新規予約", :new_reservation %></p>
